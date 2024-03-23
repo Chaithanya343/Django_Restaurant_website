@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<p class="reservationpara">Indulge in a memorable dining experience at our hotel's restaurant. We invite you to savor our exquisite dishes in a warm
+    and inviting ambiance.
+    Elevate your evening by reserving a table for an unparalleled culinary journey. Our dedicated staff is ready to make
+    your dining experience exceptional.
+    Secure your spot now and treat yourself to the finest flavors our restaurant has to offer.</p>
+<h1 class="error_msg_res">{{error_message}}</h1>
+<div class="reservation">
+<form method="post" class="reservationform"  action="{% url 'rop' %}">
+    {%csrf_token%}
+        <label class="reservationlabel" for="name">name</label>
+        <input class="reservationinput" type="text" id="name" name="name" required/>
+
+        <label class="reservationlabel" for="phone">phone</label>
+    <div style="display: flex;">
+            <input class="reservationinput" type="text" id="countryCode" name="countryCode" placeholder="+1" style="width: 25%;" required/>
+        <input class="reservationinput" type="tel" id="phone" name="phone" pattern="[0-9]{10}" required/>
+      </div>
+        <small class="reservationsmall">Enter a 10-digit phone number without spaces or dashes.</small>
+
+        <label  class="reservationlabel" for="number">people</label>
+        <input class="reservationinput" type="number" id="number" name="people" required/>
+
+        <button  class="reservationbutton" type="submit">Submit</button>
+
+    </form>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SudCH</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+  <link rel="stylesheet"  type="text/css" href="/static/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Peralta&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Rose&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Corinthia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="blue sticky">
+      <ul class="main-nav">
+          <li class="logo">SudCH</li>
+          <li><a class="n-link" href="{% url 'home' %}">Home</a></li>
+          <li><a class="n-link" href="{% url 'about' %}">About Us</a></li>
+          <li><a class="n-link" href="{% url 'menu' %}">Menu</a></li>
+          <li><a class="n-link" href="{% url 'reservation' %}">Reservation</a></li>
+          <li><a class="n-link" href="{% url 'eventbooking' %}">Event Booking</a></li>
+          <li><a class="n-link" href="{% url 'location' %}">Location</a></li>
+          <li class="push"><button class="order">Order</button></li>
+      </ul>
+  </nav>
