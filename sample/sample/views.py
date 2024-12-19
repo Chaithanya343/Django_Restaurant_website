@@ -27,21 +27,19 @@ def resop(request):
     data={}
     try:
         if request.method=="POST":
-            n=request.POST.get('name')
+            name=request.POST.get('name')
             try:
                 # Check if the input is valid
-                if is_valid_input(n):
-                    n1 = request.POST.get('name')
-                    n2 = int(request.POST.get('name'))
-                    # total=n2+3
-                    data = {
-                        'name': n,
-                        'phone': n1,
-                        'output': n2,
-                    }
-                else:
-                    raise ValueError(
-                        "Invalid input. Please enter valid name")
+                if not is_valid_input(name):
+                    raise ValueError("Invalid input. Please enter valid name")
+                phone =str(request.POST.get('countryCode'))+str(request.POST.get('phone'))
+                people = int(request.POST.get('people'))
+                # total=n2+3
+                data = {
+                    'name': name,
+                    'phone': phone,
+                    'output': f"Booking confirmed for {people} people under the name {name}.",
+                }
 
             except ValueError as ve:
                 return render(request, 'reservation.html', {'error_message': str(ve)})
