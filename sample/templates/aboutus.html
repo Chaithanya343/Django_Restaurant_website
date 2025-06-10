@@ -1,24 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="abtus">
-<p class="para_aboutus">Welcome to SudCH, where culinary excellence meets a warm and inviting atmosphere.
-    At our restaurant, we are passionate about creating an unforgettable dining experience for our valued guests.
-Established with a commitment to delivering exceptional flavors and impeccable service, SudCH has become a culinary
-    destination in Hyderabad. Our talented chefs artfully craft each dish using the finest, locally-sourced ingredients
-    to ensure a delightful fusion of taste and quality.
+<!--<div class="abtus">-->
+<!--<p class="para_aboutus">Welcome to SudCH, where culinary excellence meets a warm and inviting atmosphere.-->
+<!--    At our restaurant, we are passionate about creating an unforgettable dining experience for our valued guests.-->
+<!--Established with a commitment to delivering exceptional flavors and impeccable service, SudCH has become a culinary-->
+<!--    destination in Hyderabad. Our talented chefs artfully craft each dish using the finest, locally-sourced ingredients-->
+<!--    to ensure a delightful fusion of taste and quality.-->
 
-But SudCH is more than just a place to enjoy exquisite meals; it's a celebration of community and shared moments.
-    Our inviting ambiance is designed to make you feel at home, whether you're savoring a romantic dinner,
-    hosting a special event, or simply joining us for a casual meal with friends and family.
+<!--But SudCH is more than just a place to enjoy exquisite meals; it's a celebration of community and shared moments.-->
+<!--    Our inviting ambiance is designed to make you feel at home, whether you're savoring a romantic dinner,-->
+<!--    hosting a special event, or simply joining us for a casual meal with friends and family.-->
 
-We take pride in our dedication to sustainability and supporting local farmers, ensuring that every bite you take reflects
-    our commitment to both exceptional taste and responsible sourcing.
+<!--We take pride in our dedication to sustainability and supporting local farmers, ensuring that every bite you take reflects-->
+<!--    our commitment to both exceptional taste and responsible sourcing.-->
 
-As we continue to evolve and innovate, we invite you to embark on a culinary journey with us.
-    Thank you for choosing SudCH—where every dish tells a story, and every visit is a celebration of
-    the love we put into our craft.
+<!--As we continue to evolve and innovate, we invite you to embark on a culinary journey with us.-->
+<!--    Thank you for choosing SudCH—where every dish tells a story, and every visit is a celebration of-->
+<!--    the love we put into our craft.-->
 
-Join us and experience the essence of SudCH. Bon appétit!</p>
-<!--<img src="/static/chef.jpg" class="img"> -->
-</div>>
+<!--Join us and experience the essence of SudCH. Bon appétit!</p>-->
+<!--&lt;!&ndash;<img src="/static/chef.jpg" class="img"> &ndash;&gt;-->
+<!--</div>>-->
+
+<div class="para_aboutus">
+    {%for i in aboutus_data%}
+    <p>
+        {{i.aboutus_desc}}
+    </p>
+    {%endfor%}
+</div>
 {% endblock %}

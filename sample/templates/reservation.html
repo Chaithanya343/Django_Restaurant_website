@@ -9,6 +9,9 @@
 <div class="reservation">
 <form method="post" class="reservationform"  action="{% url 'rop' %}">
     {%csrf_token%}
+       {% if request.GET.error_message %}
+        <p style="color: red;">{{ request.GET.error_message }}</p>
+    {% endif %}
         <label class="reservationlabel" for="name">name</label>
         <input class="reservationinput" type="text" id="name" name="name" required/>
 
@@ -22,6 +25,7 @@
         <label  class="reservationlabel" for="number">people</label>
         <input class="reservationinput" type="number" id="number" name="people" required/>
 
+<!--    {{form}}-->
         <button  class="reservationbutton" type="submit">Submit</button>
 
     </form>

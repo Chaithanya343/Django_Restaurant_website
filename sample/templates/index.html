@@ -1,36 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
+<!--    <div class="c">-->
+<!--      <p class="paral">-->
+<!--        Paneer Butter Masala is a popular and indulgent North Indian dish known for its rich and creamy tomato-based gravy. -->
+<!--        This vegetarian delight features cubes of paneer (Indian cottage cheese) simmered in a luscious blend of tomatoes, cream, and -->
+<!--        aromatic spices. The dish is characterized by its vibrant orange-red color, owing to the use of tomatoes and-->
+<!--         Kashmiri red chili powder.</p>-->
+<!--      <img src="static/image2.jpg" class="im1 r">-->
+<!--    </div>-->
+<!--    <div class="c">-->
+<!--      <img src="static/images1.jpeg" class=" l">-->
+<!--      <p class="parar">-->
+<!--        Paneer Butter Masala is a popular and indulgent North Indian dish known for its rich and creamy tomato-based gravy. -->
+<!--        This vegetarian delight features cubes of paneer (Indian cottage cheese) simmered in a luscious blend of tomatoes, cream, and -->
+<!--        aromatic spices. The dish is characterized by its vibrant orange-red color, owing to the use of tomatoes and-->
+<!--         Kashmiri red chili powder.</p>-->
+<!--    </div>-->
+<!--    <div class="c">-->
+<!--      <p class="paral">-->
+<!--        Paneer Butter Masala is a popular and indulgent North Indian dish known for its rich and creamy tomato-based gravy. -->
+<!--        This vegetarian delight features cubes of paneer (Indian cottage cheese) simmered in a luscious blend of tomatoes, cream, and -->
+<!--        aromatic spices. The dish is characterized by its vibrant orange-red color, owing to the use of tomatoes and-->
+<!--         Kashmiri red chili powder.</p>-->
+<!--      <img src="static/image3.jpeg" class="r">-->
+<!--    </div>-->
+<!--    <div class="c">-->
+<!--      <img src="static/images4.jpeg" class="l">-->
+<!--      <p class="parar">-->
+<!--        Paneer Butter Masala is a popular and indulgent North Indian dish known for its rich and creamy tomato-based gravy. -->
+<!--        This vegetarian delight features cubes of paneer (Indian cottage cheese) simmered in a luscious blend of tomatoes, cream, and -->
+<!--        aromatic spices. The dish is characterized by its vibrant orange-red color, owing to the use of tomatoes and-->
+<!--         Kashmiri red chili powder.</p>-->
+<!--    </div>-->
+<!--  <div class=" blue">Fuck you</div>-->
+
+{% for item in home_data %}
     <div class="c">
-      <p class="paral">
-        Paneer Butter Masala is a popular and indulgent North Indian dish known for its rich and creamy tomato-based gravy. 
-        This vegetarian delight features cubes of paneer (Indian cottage cheese) simmered in a luscious blend of tomatoes, cream, and 
-        aromatic spices. The dish is characterized by its vibrant orange-red color, owing to the use of tomatoes and
-         Kashmiri red chili powder.</p>
-      <img src="static/image2.jpg" class="im1 r">
+        {% if forloop.counter|divisibleby:2 %}
+            <img src="{{ item.home_img.url }}" class="l">
+            <p class="parar">
+                {{ item.home_desc | safe}}
+            </p>
+        {% else %}
+            <p class="paral">
+                {{ item.home_desc | safe}}
+            </p>
+            <img src="{{ item.home_img.url }}" class="r im1">
+        {% endif %}
     </div>
-    <div class="c">
-      <img src="static/images1.jpeg" class=" l">
-      <p class="parar">
-        Paneer Butter Masala is a popular and indulgent North Indian dish known for its rich and creamy tomato-based gravy. 
-        This vegetarian delight features cubes of paneer (Indian cottage cheese) simmered in a luscious blend of tomatoes, cream, and 
-        aromatic spices. The dish is characterized by its vibrant orange-red color, owing to the use of tomatoes and
-         Kashmiri red chili powder.</p>
-    </div>
-    <div class="c">
-      <p class="paral">
-        Paneer Butter Masala is a popular and indulgent North Indian dish known for its rich and creamy tomato-based gravy. 
-        This vegetarian delight features cubes of paneer (Indian cottage cheese) simmered in a luscious blend of tomatoes, cream, and 
-        aromatic spices. The dish is characterized by its vibrant orange-red color, owing to the use of tomatoes and
-         Kashmiri red chili powder.</p>
-      <img src="static/image3.jpeg" class="r">
-    </div>
-    <div class="c">
-      <img src="static/images4.jpeg" class="l">
-      <p class="parar">
-        Paneer Butter Masala is a popular and indulgent North Indian dish known for its rich and creamy tomato-based gravy. 
-        This vegetarian delight features cubes of paneer (Indian cottage cheese) simmered in a luscious blend of tomatoes, cream, and 
-        aromatic spices. The dish is characterized by its vibrant orange-red color, owing to the use of tomatoes and
-         Kashmiri red chili powder.</p>
-    </div>
-  <div class=" blue">Fuck you</div>
+{% endfor %}
 {% endblock %}
